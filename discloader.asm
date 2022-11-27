@@ -23,7 +23,7 @@ disc_load:
 disc_success:
     mov bx, success_msg
     call print_string
-    jmp disc_loop
+    jmp disc_exit
 
 disc_error:
     push ax
@@ -41,6 +41,6 @@ disc_loop:
 disc_exit:
     ret
 
-success_msg db "Disc was read successfully", 0
+success_msg db "Disc was read successfully", 0xA, 0
 disc_error_msg db "Disc wasnt read successfully. Disc error", 0
 disc_sectors_error_msg db "Disc wasnt read successfully. Sectors error", 0
